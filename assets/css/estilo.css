@@ -1,0 +1,146 @@
+/* */
+*{
+    font-family: "Oswald", sans-serif;
+    /*tamanho da caixa leva em consideracao o 
+    padding e border, menos margin */
+    box-sizing: border-box;
+
+}
+
+body {
+    /*viewport (tamanho do nosso dispositivo)*/
+    height: 100vh;
+    margin: 0px;
+    /*divide a tela em linhas e colunas */
+    display: grid;
+    /*definindo tamanho das linhas fr(fragmento)*/
+    grid-template-rows: 120px 1fr 60px;
+    /*definindo tamanho das linhas*/
+    grid-template-columns: 1fr;
+    /*define qual área cada div irá ocupar*/
+    grid-template-areas: 
+    "cabecalho"
+    "principal"
+    "rodape";
+
+}
+.cabecalho{
+    /*vinculando a classe cabecalho
+    a parte cabecalho do grid(apontando)*/
+    grid-area: cabecalho;
+    background-color: lightgrey;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    /*eixo principal*/
+    justify-content: center;
+    /*eixo secundário*/
+    align-items: center;
+    padding-bottom: 10px;
+    z-index: 1;
+    box-shadow: 0px 6px 9px 3px rgba(0,0,0,0.75);
+    overflow: hidden;
+}
+.cabecalho h1{
+    margin: 0;
+    font-weight: 300;
+    font-size: 2.8rem;
+}
+.cabecalho h2{
+    margin: 0;
+    font-weight: 200;
+    font-size: 1.6rem;
+}
+
+#logoetec{
+    width: 150px;
+    position: absolute;
+    left: 10%;
+}
+
+.principal{
+    grid-area: principal;
+    height: calc(100vh - 180px);
+    background-color:#f0f0f0;
+    padding: 20px;
+      
+}
+.conteudo{
+    /*mover elementos em relação a posição
+    original*/
+    position: relative;
+    height: 100%;
+    background-color: #fff;
+    /*scroll para os elementos q excederem*/
+    overflow-y: scroll;
+    padding: 20px;
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+
+}
+
+
+.rodape{
+    grid-area: rodape;
+    background-color: #b71c1c;
+    display: flex;
+    /*eixo principal*/
+    justify-content: center;
+    /*eixo principal*/
+    align-items: center;
+    font-weight: 300;
+    font-size: 1.6rem;
+    padding-right: 20px;
+    color: white;
+
+
+}
+.aulas{
+    /* aulas vira container e aula vira flex item */
+    display: flex;
+    /* quebrar linha */
+    flex-wrap: wrap;
+    /* divide os intens proporcionalmente */
+    justify-content: space-around;
+}
+.aula{
+    /* definir o espaço do elemento na tela */
+    flex-basis: 45%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    border:solid #1867c0 5px;
+    
+    
+}
+.aula > a{
+    text-decoration: none;
+    color: #222;
+    /* ocupa toda a linha */
+    display: flex;
+    
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.aula:hover{
+    background-color: lightslategray;
+}
+
+
+
+
+
+
+#ibc1, #ibc2, #valores, #tempo, #motiva{
+  width: 600px;
+  height: 270px;
+  margin: 0;
+  border-radius: 10px;
+  border: 5px solid black;
+  
+  
+}
